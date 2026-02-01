@@ -1,2 +1,90 @@
-# valentine.html
-mail 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffd6e8;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      width: 320px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.2s;
+    }
+
+    #yesBtn {
+      background-color: #ff4d88;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #eee;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #ff4d88;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Will you be my Valentine? 💖</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    // Make the "No" button run away
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // When "Yes" is clicked
+    yesBtn.addEventListener("click", () => {
+      message.innerHTML = "YAYYY 💕 You just made me the happiest person alive!!";
+    });
+  </script>
+
+</body>
+</html>
